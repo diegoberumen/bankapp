@@ -26,9 +26,8 @@ function Balance(){
                     <h1>${user.balance}</h1><br/>
                     <br/>
                     <br/>
-                    <a className="btn btn-success" href="#/deposit/">Make a Deposit</a>
-                    <br/>
-                    <a className="btn btn-danger" href="#/withdraw/">Make a Withdrawal</a>
+                    <a className="btn btn-success" href="#/deposit/">Deposit</a>
+                    <a className="btn btn-danger" href="#/withdraw/">Withdrawal</a>
                 </>
             ):(
                 <>
