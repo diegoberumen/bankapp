@@ -69,7 +69,8 @@ function CreateAccount(){
                 ):(
                     <>
                         <h5>Success!</h5>
-                        <button type="submit" className="btn btn-light" onClick={clearForm}>Add Another Account</button>
+                        <a className="btn btn-light" href="#/login/">Log-In</a>
+                        <button type="submit" className="btn btn-light" onClick={clearForm}>Add Another Account</button><br/>
                     </>
                 )}
         />

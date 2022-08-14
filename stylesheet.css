@@ -26,3 +26,7 @@
 .navbar .nav-item .nav-link:hover::before{
     transform: scale(1);
 }
+
+.btn{
+    margin-bottom: 10px;
+}
