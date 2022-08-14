@@ -1,7 +1,6 @@
 function Spa(){
     return (
-        <HashRouter>
-            
+        <HashRouter>  
             <UserContext.Provider value={{users:[{name:'Abel',email:'abel@mit.edu',password:'secret',balance:100}], currentUser:[]}}>
                 <NavBar/>
                 <Route path="/" exact          component={Home}/>

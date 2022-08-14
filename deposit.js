@@ -1,7 +1,6 @@
 function Deposit(){
     const ctx = React.useContext(UserContext);
     let user = ctx.currentUser[0];
-    console.log(ctx.currentUser[0]);
     const [status, setStatus]               = React.useState("");
     const [depositAmount, setDepositAmount] = React.useState("");
     let show = false;
@@ -21,10 +20,22 @@ function Deposit(){
             setTimeout(() => setStatus(""), 1500);
             return setStatus("Error: Enter Amount");;
         } else {
-            user.balance = Number(depositAmount) + Number(user.balance);
-            setDepositAmount("");
-            setTimeout(() => setStatus(""), 1500);
-            return setStatus("Deposit Confirmed");;
+            if(depositAmount < 0){
+                setTimeout(() => setStatus(""), 1500);
+                setStatus("Error: Negative Value");
+                return setDepositAmount("")
+            } else {
+                if(isNaN(depositAmount)){
+                    setTimeout(() => setStatus(""), 1500);
+                    setStatus("Error: Not a Number");
+                    return setDepositAmount("")
+                } else {
+                    user.balance = Number(depositAmount) + Number(user.balance);  
+                    setTimeout(() => setStatus(""), 1500);
+                    setStatus("Deposit Confirmed");
+                    return setDepositAmount("");
+                };
+            };
         };
     };
     
@@ -40,7 +51,7 @@ function Deposit(){
                     <h1>${user.balance}</h1><br/>
                     Deposit Amount:<br/>
                     <input type="input" className="form-control" id="depositamount" placeholder="Enter Amount" value={depositAmount} onChange={e => setDepositAmount(e.currentTarget.value)}/><br/>
-                    <button type="submit" className="btn btn-light" onClick={handleDeposit}>Deposit</button>
+                    <button disabled={!depositAmount} type="submit" className="btn btn-light" onClick={handleDeposit}>Deposit</button>
                 </>
             ):(
                 <>

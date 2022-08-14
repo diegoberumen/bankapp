@@ -1,7 +1,6 @@
 function Balance(){
     const ctx = React.useContext(UserContext);
     let user = ctx.currentUser[0]
-    console.log(ctx.currentUser[0])
     const [status, setStatus]               = React.useState("");
     let show = false
 

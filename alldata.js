@@ -1,6 +1,5 @@
 function AllData(){
     const ctx = React.useContext(UserContext);
-    console.log(ctx.users)
     return(
         <Card
             bgcolor="dark"
